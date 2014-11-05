@@ -15,6 +15,7 @@
 		00022A7B1A0AE5630035FADC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00022A7A1A0AE5630035FADC /* Images.xcassets */; };
 		00022A7E1A0AE5630035FADC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00022A7C1A0AE5630035FADC /* LaunchScreen.xib */; };
 		00022A8A1A0AE5630035FADC /* ThousandWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A891A0AE5630035FADC /* ThousandWordsTests.m */; };
+		00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A941A0AE7D00035FADC /* AlbumTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		00022A831A0AE5630035FADC /* ThousandWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThousandWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00022A881A0AE5630035FADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00022A891A0AE5630035FADC /* ThousandWordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThousandWordsTests.m; sourceTree = "<group>"; };
+		00022A931A0AE7D00035FADC /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
+		00022A941A0AE7D00035FADC /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +86,11 @@
 		00022A691A0AE5630035FADC /* ThousandWords */ = {
 			isa = PBXGroup;
 			children = (
-				00022A6E1A0AE5630035FADC /* AppDelegate.h */,
-				00022A6F1A0AE5630035FADC /* AppDelegate.m */,
+				00022A771A0AE5630035FADC /* Main.storyboard */,
+				00022A931A0AE7D00035FADC /* AlbumTableViewController.h */,
+				00022A941A0AE7D00035FADC /* AlbumTableViewController.m */,
 				00022A741A0AE5630035FADC /* ViewController.h */,
 				00022A751A0AE5630035FADC /* ViewController.m */,
-				00022A771A0AE5630035FADC /* Main.storyboard */,
 				00022A7A1A0AE5630035FADC /* Images.xcassets */,
 				00022A7C1A0AE5630035FADC /* LaunchScreen.xib */,
 				00022A711A0AE5630035FADC /* ThousandWords.xcdatamodeld */,
@@ -99,6 +102,8 @@
 		00022A6A1A0AE5630035FADC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00022A6E1A0AE5630035FADC /* AppDelegate.h */,
+				00022A6F1A0AE5630035FADC /* AppDelegate.m */,
 				00022A6B1A0AE5630035FADC /* Info.plist */,
 				00022A6C1A0AE5630035FADC /* main.m */,
 			);
@@ -222,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */,
 				00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */,
 				00022A701A0AE5630035FADC /* AppDelegate.m in Sources */,
 				00022A761A0AE5630035FADC /* ViewController.m in Sources */,
