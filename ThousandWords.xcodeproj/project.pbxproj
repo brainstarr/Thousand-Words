@@ -10,7 +10,6 @@
 		00022A6D1A0AE5630035FADC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A6C1A0AE5630035FADC /* main.m */; };
 		00022A701A0AE5630035FADC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A6F1A0AE5630035FADC /* AppDelegate.m */; };
 		00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00022A711A0AE5630035FADC /* ThousandWords.xcdatamodeld */; };
-		00022A761A0AE5630035FADC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A751A0AE5630035FADC /* ViewController.m */; };
 		00022A791A0AE5630035FADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00022A771A0AE5630035FADC /* Main.storyboard */; };
 		00022A7B1A0AE5630035FADC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00022A7A1A0AE5630035FADC /* Images.xcassets */; };
 		00022A7E1A0AE5630035FADC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00022A7C1A0AE5630035FADC /* LaunchScreen.xib */; };
@@ -35,8 +34,6 @@
 		00022A6E1A0AE5630035FADC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00022A6F1A0AE5630035FADC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		00022A721A0AE5630035FADC /* ThousandWords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ThousandWords.xcdatamodel; sourceTree = "<group>"; };
-		00022A741A0AE5630035FADC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		00022A751A0AE5630035FADC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		00022A781A0AE5630035FADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00022A7A1A0AE5630035FADC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00022A7D1A0AE5630035FADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -87,10 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				00022A771A0AE5630035FADC /* Main.storyboard */,
-				00022A931A0AE7D00035FADC /* AlbumTableViewController.h */,
-				00022A941A0AE7D00035FADC /* AlbumTableViewController.m */,
-				00022A741A0AE5630035FADC /* ViewController.h */,
-				00022A751A0AE5630035FADC /* ViewController.m */,
+				00022A961A0AED480035FADC /* AlbumVC */,
 				00022A7A1A0AE5630035FADC /* Images.xcassets */,
 				00022A7C1A0AE5630035FADC /* LaunchScreen.xib */,
 				00022A711A0AE5630035FADC /* ThousandWords.xcdatamodeld */,
@@ -125,6 +119,15 @@
 				00022A881A0AE5630035FADC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00022A961A0AED480035FADC /* AlbumVC */ = {
+			isa = PBXGroup;
+			children = (
+				00022A931A0AE7D00035FADC /* AlbumTableViewController.h */,
+				00022A941A0AE7D00035FADC /* AlbumTableViewController.m */,
+			);
+			name = AlbumVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +233,6 @@
 				00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */,
 				00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */,
 				00022A701A0AE5630035FADC /* AppDelegate.m in Sources */,
-				00022A761A0AE5630035FADC /* ViewController.m in Sources */,
 				00022A6D1A0AE5630035FADC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
