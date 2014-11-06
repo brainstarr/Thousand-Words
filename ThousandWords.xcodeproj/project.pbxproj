@@ -15,6 +15,7 @@
 		00022A7E1A0AE5630035FADC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00022A7C1A0AE5630035FADC /* LaunchScreen.xib */; };
 		00022A8A1A0AE5630035FADC /* ThousandWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A891A0AE5630035FADC /* ThousandWordsTests.m */; };
 		00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A941A0AE7D00035FADC /* AlbumTableViewController.m */; };
+		00022A991A0AF1ED0035FADC /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A981A0AF1ED0035FADC /* Album.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		00022A891A0AE5630035FADC /* ThousandWordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThousandWordsTests.m; sourceTree = "<group>"; };
 		00022A931A0AE7D00035FADC /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		00022A941A0AE7D00035FADC /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
+		00022A971A0AF1ED0035FADC /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		00022A981A0AF1ED0035FADC /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				00022A7A1A0AE5630035FADC /* Images.xcassets */,
 				00022A7C1A0AE5630035FADC /* LaunchScreen.xib */,
 				00022A711A0AE5630035FADC /* ThousandWords.xcdatamodeld */,
+				00022A971A0AF1ED0035FADC /* Album.h */,
+				00022A981A0AF1ED0035FADC /* Album.m */,
 				00022A6A1A0AE5630035FADC /* Supporting Files */,
 			);
 			path = ThousandWords;
@@ -233,6 +238,7 @@
 				00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */,
 				00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */,
 				00022A701A0AE5630035FADC /* AppDelegate.m in Sources */,
+				00022A991A0AF1ED0035FADC /* Album.m in Sources */,
 				00022A6D1A0AE5630035FADC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
