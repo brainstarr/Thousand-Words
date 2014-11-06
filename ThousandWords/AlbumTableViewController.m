@@ -7,12 +7,19 @@
 //
 
 #import "AlbumTableViewController.h"
+#import "Album.h"
 
-@interface AlbumTableViewController ()
+@interface AlbumTableViewController () <UIAlertViewDelegate>
 
 @end
 
 @implementation AlbumTableViewController
+
+- (IBAction)addAlbumBarButtonItemPressed:(UIBarButtonItem *)sender {
+    UIAlertView *newAlbumAlertView = [[UIAlertView alloc]initWithTitle:@"Enter New Album Name" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    [newAlbumAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [newAlbumAlertView show];
+}
 
 -(NSMutableArray *)albums
 {
@@ -33,6 +40,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma UIAlertView Delegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1){
+        NSString *alertText = [alertView textFieldAtIndex:0].text;
+        NSLog(@"My album is named %@", alertText);
+    }
 }
 
 #pragma mark - Table view data source
