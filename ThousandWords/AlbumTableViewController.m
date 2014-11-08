@@ -8,6 +8,7 @@
 
 #import "AlbumTableViewController.h"
 #import "Album.h"
+#import "CoreDataHelper.h"
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
 
@@ -31,6 +32,25 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"album"];
+    
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    
+ 
+    
+    NSError *error = nil;
+    
+    NSArray *fetchedAlbums = [[CoreDataHelper managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    
+    self.albums = [fetchedAlbums mutableCopy];
+    
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -48,8 +68,7 @@
 
 -(Album *)albumWithName:(NSString *)name
 {
-    id delegate = [[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSManagedObjectContext *context = [CoreDataHelper managedObjectContext];
     
     Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
     album.name = name;

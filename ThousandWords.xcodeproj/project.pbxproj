@@ -16,6 +16,7 @@
 		00022A8A1A0AE5630035FADC /* ThousandWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A891A0AE5630035FADC /* ThousandWordsTests.m */; };
 		00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A941A0AE7D00035FADC /* AlbumTableViewController.m */; };
 		00022A991A0AF1ED0035FADC /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A981A0AF1ED0035FADC /* Album.m */; };
+		00882F901A0D8E9200AD725B /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		00022A941A0AE7D00035FADC /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
 		00022A971A0AF1ED0035FADC /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		00022A981A0AF1ED0035FADC /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		00882F8E1A0D8E9200AD725B /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		00022A6A1A0AE5630035FADC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00882F8E1A0D8E9200AD725B /* CoreDataHelper.h */,
+				00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */,
 				00022A6E1A0AE5630035FADC /* AppDelegate.h */,
 				00022A6F1A0AE5630035FADC /* AppDelegate.m */,
 				00022A6B1A0AE5630035FADC /* Info.plist */,
@@ -235,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00882F901A0D8E9200AD725B /* CoreDataHelper.m in Sources */,
 				00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */,
 				00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */,
 				00022A701A0AE5630035FADC /* AppDelegate.m in Sources */,
@@ -430,6 +436,7 @@
 				00022A8F1A0AE5630035FADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00022A901A0AE5630035FADC /* Build configuration list for PBXNativeTarget "ThousandWordsTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +445,7 @@
 				00022A921A0AE5630035FADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
