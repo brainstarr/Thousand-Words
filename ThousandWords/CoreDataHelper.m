@@ -7,8 +7,6 @@
 //
 
 #import "CoreDataHelper.h"
-#import "AppDelegate.h"
-#import <CoreData/CoreData.h>
 #import "Album.h"
 
 @implementation CoreDataHelper
@@ -18,7 +16,7 @@
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
     
-    if ([delegate performSelector:@selector(NSManagedObjectContext)])
+    if ([delegate performSelector:@selector(managedObjectContext)])
     {
         context = [delegate managedObjectContext];
     }
