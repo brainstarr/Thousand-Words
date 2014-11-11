@@ -17,6 +17,7 @@
 		00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A941A0AE7D00035FADC /* AlbumTableViewController.m */; };
 		00022A991A0AF1ED0035FADC /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 00022A981A0AF1ED0035FADC /* Album.m */; };
 		00882F901A0D8E9200AD725B /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */; };
+		009E1A3B1A11D6C600345353 /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E1A3A1A11D6C600345353 /* PhotosCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		00022A981A0AF1ED0035FADC /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		00882F8E1A0D8E9200AD725B /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		009E1A391A11D6C600345353 /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
+		009E1A3A1A11D6C600345353 /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				00022A771A0AE5630035FADC /* Main.storyboard */,
+				009E1A3C1A11D6CC00345353 /* PhotoCollectionVC */,
 				00022A961A0AED480035FADC /* AlbumVC */,
 				00022A7A1A0AE5630035FADC /* Images.xcassets */,
 				00022A7C1A0AE5630035FADC /* LaunchScreen.xib */,
@@ -138,6 +142,15 @@
 				00022A941A0AE7D00035FADC /* AlbumTableViewController.m */,
 			);
 			name = AlbumVC;
+			sourceTree = "<group>";
+		};
+		009E1A3C1A11D6CC00345353 /* PhotoCollectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				009E1A391A11D6C600345353 /* PhotosCollectionViewController.h */,
+				009E1A3A1A11D6C600345353 /* PhotosCollectionViewController.m */,
+			);
+			name = PhotoCollectionVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +256,7 @@
 				00882F901A0D8E9200AD725B /* CoreDataHelper.m in Sources */,
 				00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */,
 				00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */,
+				009E1A3B1A11D6C600345353 /* PhotosCollectionViewController.m in Sources */,
 				00022A701A0AE5630035FADC /* AppDelegate.m in Sources */,
 				00022A991A0AF1ED0035FADC /* Album.m in Sources */,
 				00022A6D1A0AE5630035FADC /* main.m in Sources */,
