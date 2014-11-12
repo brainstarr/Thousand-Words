@@ -38,26 +38,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMb-TW-lc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="102.75"/>
+            <point key="canvasLocation" x="537" y="102"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Title-->
         <scene sceneID="4ah-a1-mgl">
             <objects>
                 <collectionViewController id="YMg-M8-PyX" customClass="PhotosCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Owc-nr-Qj4">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ssf-pj-OBq">
-                            <size key="itemSize" width="118" height="120"/>
+                            <size key="itemSize" width="155" height="155"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Photo Cell" id="JVt-Hr-zB5">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Photo Cell" id="JVt-Hr-zB5" customClass="PhotoCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="118" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -68,6 +68,15 @@
                             <outlet property="delegate" destination="YMg-M8-PyX" id="fTh-cJ-LOO"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="qCr-LY-Njv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZpT-36-VMu">
+                            <connections>
+                                <action selector="cameraBarButtonItemPressed:" destination="YMg-M8-PyX" id="QmA-nx-Dil"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lf-c1-uQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +98,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ml2-fg-TbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="102"/>
+            <point key="canvasLocation" x="-289.5" y="102"/>
         </scene>
     </scenes>
 </document>

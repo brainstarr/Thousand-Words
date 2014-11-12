@@ -7,6 +7,7 @@
 //
 
 #import "PhotosCollectionViewController.h"
+#import "PhotoCollectionViewCell.h"
 
 @interface PhotosCollectionViewController ()
 
@@ -31,6 +32,20 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]){
+        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+    [self presentViewController:picker animated:YES completion: nil];
 }
 
 /*
@@ -60,8 +75,9 @@ static NSString * const reuseIdentifier = @"Cell";
     // Configure the cell
     static NSString *CellIdentifier = @"Photo Cell";
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+    cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
     
     return cell;
 }
@@ -98,3 +114,5 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 @end
+
+
