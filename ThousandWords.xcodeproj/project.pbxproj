@@ -21,6 +21,7 @@
 		009E1A411A12F0D600345353 /* Astronaut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 009E1A401A12F0D600345353 /* Astronaut.jpg */; };
 		009E1A471A146B1600345353 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E1A461A146B1600345353 /* Album.m */; };
 		009E1A4A1A146B1700345353 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E1A491A146B1700345353 /* Photo.m */; };
+		009E1A4E1A146C3900345353 /* PictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E1A4D1A146C3900345353 /* PictureDataTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		009E1A461A146B1600345353 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		009E1A481A146B1700345353 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		009E1A491A146B1700345353 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		009E1A4C1A146C3900345353 /* PictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDataTransformer.h; sourceTree = "<group>"; };
+		009E1A4D1A146C3900345353 /* PictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDataTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				009E1A401A12F0D600345353 /* Astronaut.jpg */,
-				00882F8E1A0D8E9200AD725B /* CoreDataHelper.h */,
-				00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */,
 				00022A6E1A0AE5630035FADC /* AppDelegate.h */,
 				00022A6F1A0AE5630035FADC /* AppDelegate.m */,
 				00022A6B1A0AE5630035FADC /* Info.plist */,
@@ -166,10 +167,14 @@
 			isa = PBXGroup;
 			children = (
 				00022A711A0AE5630035FADC /* ThousandWords.xcdatamodeld */,
+				009E1A4C1A146C3900345353 /* PictureDataTransformer.h */,
+				009E1A4D1A146C3900345353 /* PictureDataTransformer.m */,
 				009E1A481A146B1700345353 /* Photo.h */,
 				009E1A491A146B1700345353 /* Photo.m */,
 				009E1A451A146B1600345353 /* Album.h */,
 				009E1A461A146B1600345353 /* Album.m */,
+				00882F8E1A0D8E9200AD725B /* CoreDataHelper.h */,
+				00882F8F1A0D8E9200AD725B /* CoreDataHelper.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009E1A4E1A146C3900345353 /* PictureDataTransformer.m in Sources */,
 				00882F901A0D8E9200AD725B /* CoreDataHelper.m in Sources */,
 				00022A951A0AE7D00035FADC /* AlbumTableViewController.m in Sources */,
 				00022A731A0AE5630035FADC /* ThousandWords.xcdatamodeld in Sources */,
