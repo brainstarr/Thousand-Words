@@ -1,19 +1,19 @@
 //
-//  Album.m
+//  Photo.m
 //  ThousandWords
 //
 //  Created by Brian Starr on 11/12/14.
 //  Copyright (c) 2014 Brian Starr. All rights reserved.
 //
 
-#import "Album.h"
 #import "Photo.h"
+#import "Album.h"
 
 
-@implementation Album
+@implementation Photo
 
 @dynamic date;
-@dynamic name;
-@dynamic photos;
+@dynamic attribute;
+@dynamic albumBook;
 
 @end
