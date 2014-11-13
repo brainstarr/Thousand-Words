@@ -9,19 +9,29 @@
 #import "PhotosCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 
-@interface PhotosCollectionViewController ()
+@interface PhotosCollectionViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property (strong, nonatomic) NSMutableArray *photos;
 
 @end
 
 @implementation PhotosCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+- (NSMutableArray *) photos
+{
+    if (!_photos){
+        _photos = [[NSMutableArray alloc]init];
+    }
+    return _photos;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    
+    static NSString * const reuseIdentifier = @"Cell";
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -33,6 +43,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark <UICollectionViewDelegate>
 
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];
@@ -60,6 +72,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDataSource>
 
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
@@ -67,7 +80,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 5;
+    return [self.photos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,12 +90,32 @@ static NSString * const reuseIdentifier = @"Cell";
     
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
+    cell.imageView.image = self.photos[indexPath.row];
     
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
+#pragma UIImagePickerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    if (!image){
+        image = info[UIImagePickerControllerOriginalImage];
+        
+        [self.photos addObject:image];
+        
+        [self.collectionView reloadData];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
