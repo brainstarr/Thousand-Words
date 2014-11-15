@@ -2,7 +2,7 @@
 //  Photo.h
 //  ThousandWords
 //
-//  Created by Brian Starr on 11/12/14.
+//  Created by Brian Starr on 11/14/14.
 //  Copyright (c) 2014 Brian Starr. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 @interface Photo : NSManagedObject
 
 @property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) id attribute;
+@property (nonatomic, retain) id image;
 @property (nonatomic, retain) Album *albumBook;
 
 @end

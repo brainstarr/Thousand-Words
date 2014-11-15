@@ -12,6 +12,8 @@
 
 @interface PhotosCollectionViewController : UICollectionViewController
 
+@property (strong, nonatomic) Album *album;
+
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender;
 
 @end

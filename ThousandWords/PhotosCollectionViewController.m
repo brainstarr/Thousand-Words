@@ -8,6 +8,9 @@
 
 #import "PhotosCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
+#import "Photo.h"
+#import "PictureDataTransformer.h"
+#import "CoreDataHelper.h"
 
 @interface PhotosCollectionViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -116,6 +119,22 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma - Helper Methods
+
+-(Photo *)photoFromImage:(UIImage *)image
+{
+    Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:[CoreDataHelper managedObjectContext]];
+    photo.image = image;
+    photo.date = [NSDate date];
+    photo.albumBook = self.album;
+    
+    NSError *error = nil;
+    if (![[photo managedObjectContext]save:&error]){
+        //Error in saving
+        NSLog(@"%@", error);
+    }
+    return photo;
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

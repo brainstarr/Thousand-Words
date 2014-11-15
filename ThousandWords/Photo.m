@@ -2,7 +2,7 @@
 //  Photo.m
 //  ThousandWords
 //
-//  Created by Brian Starr on 11/12/14.
+//  Created by Brian Starr on 11/14/14.
 //  Copyright (c) 2014 Brian Starr. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 @implementation Photo
 
 @dynamic date;
-@dynamic attribute;
+@dynamic image;
 @dynamic albumBook;
 
 @end
