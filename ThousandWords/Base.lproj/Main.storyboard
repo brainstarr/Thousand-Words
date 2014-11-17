@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YMg-M8-PyX" kind="show" id="SXj-cJ-eIZ"/>
+                                    <segue destination="YMg-M8-PyX" kind="show" identifier="Album Chosen" id="SXj-cJ-eIZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

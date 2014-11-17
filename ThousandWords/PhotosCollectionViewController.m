@@ -92,8 +92,11 @@
     static NSString *CellIdentifier = @"Photo Cell";
     
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    Photo *photo = self.photos[indexPath.row];
+    
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = self.photos[indexPath.row];
+    cell.imageView.image = photo.image;
     
     return cell;
 }
@@ -103,13 +106,11 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerEditedImage];
-    if (!image){
-        image = info[UIImagePickerControllerOriginalImage];
+    if (!image) image = info[UIImagePickerControllerOriginalImage];
         
-        [self.photos addObject:image];
-        
-        [self.collectionView reloadData];
-    }
+    [self.photos addObject:[self photoFromImage:image]];
+    
+    [self.collectionView reloadData];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
