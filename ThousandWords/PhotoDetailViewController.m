@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)deleteButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)addFilterButtonPressed:(UIButton *)sender {
+}
 @end
