@@ -40,6 +40,11 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    
+    NSSet *unorderedPhotos = self.album.photos;
+    NSSortDescriptor *dateDescription = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSArray *sortedPhotos = [unorderedPhotos sortedArrayUsingDescriptors:@[dateDescription]];
+    self.photos = [sortedPhotos mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning {
