@@ -162,7 +162,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"Album Chosen"]){
-        if ([segue.description isKindOfClass:[PhotosCollectionViewController class]])
+        if ([segue.destinationViewController isKindOfClass:[PhotosCollectionViewController class]])
         {
             NSIndexPath *path = [self.tableView indexPathForSelectedRow];
             
