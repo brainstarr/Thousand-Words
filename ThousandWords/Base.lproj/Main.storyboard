@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="537" y="102"/>
         </scene>
-        <!--Title-->
+        <!--Album-->
         <scene sceneID="4ah-a1-mgl">
             <objects>
                 <collectionViewController id="YMg-M8-PyX" customClass="PhotosCollectionViewController" sceneMemberID="viewController">
@@ -62,6 +62,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="7sp-2p-r32" kind="show" id="yKa-OZ-oMK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -70,7 +73,7 @@
                         </connections>
                     </collectionView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="qCr-LY-Njv">
+                    <navigationItem key="navigationItem" title="Album" id="qCr-LY-Njv">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZpT-36-VMu">
                             <connections>
                                 <action selector="cameraBarButtonItemPressed:" destination="YMg-M8-PyX" id="QmA-nx-Dil"/>
@@ -82,6 +85,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lf-c1-uQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1473" y="102"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="59w-rY-kKj">
+            <objects>
+                <viewController id="7sp-2p-r32" customClass="PhotoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKG-VB-7mF"/>
+                        <viewControllerLayoutGuide type="bottom" id="z1R-xR-gGP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1jl-XY-h4Z">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOc-4U-MdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377.5" y="97.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ixh-x4-2rT">
