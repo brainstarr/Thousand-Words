@@ -125,6 +125,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="addFilterButtonPressed:" destination="7sp-2p-r32" eventType="touchUpInside" id="t6j-vc-Gz1"/>
+                                    <segue destination="3bR-nE-uu6" kind="show" identifier="Filter Segue" id="dWH-Fu-gyD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,6 +152,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOc-4U-MdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2377.5" y="97.5"/>
+        </scene>
+        <!--Filters Collection View Controller-->
+        <scene sceneID="MoQ-3F-RMW">
+            <objects>
+                <collectionViewController id="3bR-nE-uu6" customClass="FiltersCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IFR-R2-EgU">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1ok-Ww-ghs">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EwL-bS-aDh">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="3bR-nE-uu6" id="7SX-Wd-zgQ"/>
+                            <outlet property="delegate" destination="3bR-nE-uu6" id="fiE-Jj-03t"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBw-NF-nLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3178.5" y="102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ixh-x4-2rT">

@@ -9,6 +9,7 @@
 #import "PhotoDetailViewController.h"
 #import "PhotosCollectionViewController.h"
 #import "Photo.h"
+#import "FiltersCollectionViewController.h"
 
 @interface PhotoDetailViewController ()
 
@@ -56,6 +57,18 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Filter Segue"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[FiltersCollectionViewController class]])
+             {
+                 FiltersCollectionViewController *targetVC = segue.destinationViewController;
+                 targetVC.photo = self.photo;
+             }
+    }
 }
 
 - (IBAction)addFilterButtonPressed:(UIButton *)sender {
