@@ -9,6 +9,7 @@
 #import "PhotosCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 #import "Photo.h"
+#import "PhotoDetailViewController.h"
 #import "PictureDataTransformer.h"
 #import "CoreDataHelper.h"
 
@@ -41,10 +42,18 @@
     
     // Do any additional setup after loading the view.
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
     NSSet *unorderedPhotos = self.album.photos;
     NSSortDescriptor *dateDescription = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
     NSArray *sortedPhotos = [unorderedPhotos sortedArrayUsingDescriptors:@[dateDescription]];
     self.photos = [sortedPhotos mutableCopy];
+    
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,15 +77,23 @@
     [self presentViewController:picker animated:YES completion: nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"Detail Segue"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[PhotoDetailViewController class]])
+        {
+            PhotoDetailViewController *targetViewController = segue.destinationViewController;
+            NSIndexPath *path = [[self.collectionView indexPathsForSelectedItems] lastObject];
+            Photo *selectedPhoto = self.photos[path.row];
+            targetViewController.photo = selectedPhoto;
+        }
+    }
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
