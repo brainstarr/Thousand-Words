@@ -6,13 +6,24 @@
 //  Copyright (c) 2014 Brian Starr. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "FiltersCollectionViewController.h"
+#import "PhotoCollectionViewCell.h"
+#import "Photo.h"
 
 @interface FiltersCollectionViewController ()
+
+@property (strong, nonatomic) NSMutableArray *filters;
 
 @end
 
 @implementation FiltersCollectionViewController
+
+-(NSMutableArray *)filters{
+    if (!_filters) _filters = [[NSMutableArray alloc]init];
+    
+    return _filters;
+}
 
 static NSString * const reuseIdentifier = @"Cell";
 
@@ -52,13 +63,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    return [self.filters count];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Photo Cell";
     
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.imageView.image = self.photo.image;
     // Configure the cell
     
     return cell;
