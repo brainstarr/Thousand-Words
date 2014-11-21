@@ -14,6 +14,7 @@
 @interface FiltersCollectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *filters;
+@property (strong, nonatomic) CIContext *context;
 
 @end
 
@@ -23,6 +24,12 @@
     if (!_filters) _filters = [[NSMutableArray alloc]init];
     
     return _filters;
+}
+
+-(CIContext *)context{
+    if (!_context) _context = [CIContext contextWithOptions:nil];
+    
+    return _context;
 }
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -65,6 +72,23 @@ static NSString * const reuseIdentifier = @"Cell";
     return allFilters;
 }
 
+-(UIImage *)filteredImageFromImage:(UIImage *)image andFilter:(CIFilter *)filter
+{
+    CIImage *unfilteredImage = [[CIImage alloc]initWithCGImage:image.CGImage];
+    
+    [filter setValue:unfilteredImage forKey:kCIInputImageKey];
+    CIImage *filteredImage = [filter outputImage];
+    
+    CGRect extent = [filteredImage extent];
+    
+    CGImageRef cgImage = [self.context createCGImage:filteredImage fromRect:extent];
+    
+    
+    UIImage *finalImage = [UIImage imageWithCGImage:cgImage];
+    
+    return finalImage;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -77,15 +101,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
-}
-
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.filters count];
-}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -93,10 +108,19 @@ static NSString * const reuseIdentifier = @"Cell";
     
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = self.photo.image;
-    // Configure the cell
+    
+    cell.imageView.image = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
     
     return cell;
+}
+
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 1;
+//}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.filters count];
 }
 
 #pragma mark <UICollectionViewDelegate>
