@@ -125,6 +125,21 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PhotoCollectionViewCell *selectedCell = (PhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    self.photo.image = selectedCell.imageView.image;
+    
+    NSError *error = nil;
+    
+    if (![[self.photo managedObjectContext] save:&error]){
+        NSLog(@"@", error);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
